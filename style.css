@@ -15,12 +15,14 @@ body {
   background-color: #d0d5d9;
 }
 .book {
-  height: 55vw; /* 40% chiều ngang của màn hình */
-  width: calc(55vw * 3 / 4); /* Tỉ lệ 4:3 theo chiều ngang */
+  width: min(45vw, calc(90vh * 3 / 4)); /* Tối đa 50% chiều ngang hoặc theo tỷ lệ 3:4 */
+  aspect-ratio: 3 / 4; /* Duy trì tỷ lệ cố định 3:4 */
   position: relative;
   perspective: 1500px;
   transition: 1s;
 }
+
+
 .book.open {
   transform: translateX(21vw); /* Dịch cuốn sách sang phải */
   transition: 1s;
@@ -62,7 +64,7 @@ body {
 .page .content {
   padding: 5%; /* Khoảng cách nội dung với mép box theo tỷ lệ */
   box-sizing: border-box;
-  font-size: min(2.7vw, max(14px, 1.5rem)); /* Sử dụng min và max để kiểm soát cỡ chữ */
+  font-size: min(2.5vw, max(14px, 1.5rem)); /* Sử dụng min và max để kiểm soát cỡ chữ */
   line-height: 1.5; /* Duy trì khoảng cách dòng dễ đọc */
   color: #333;
   word-wrap: break-word; /* Đảm bảo văn bản xuống dòng nếu quá dài */
