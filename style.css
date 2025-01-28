@@ -24,7 +24,7 @@ body {
 
 
 .book.open {
-  transform: translateX(21vw); /* Dịch cuốn sách sang phải */
+  transform: translateX(calc(min(45vw, calc(90vh * 3 / 4)) / 2)); /* Dịch cuốn sách sang phải */
   transition: 1s;
 }
 
