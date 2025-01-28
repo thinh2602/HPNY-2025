@@ -113,6 +113,7 @@ const pages = document.querySelectorAll('.page');
 // Reset all pages when mouse leaves the book
 book.addEventListener('mouseleave', () => {
     pages.forEach(page => page.classList.remove('flipped'));
+    book.classList.remove('open'); // Đưa sách về vị trí ban đầu
 });
 
 // Flip pages on click
@@ -125,6 +126,9 @@ pages.forEach((page, index) => {
             for (let i = 0; i < index; i++) {
                 pages[i].classList.add('flipped');
             }
+
+            // Dịch chuyển cuốn sách sang phải khi có trang lật
+            book.classList.add('open');
         }
     });
 });
